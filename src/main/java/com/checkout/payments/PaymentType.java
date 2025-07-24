@@ -19,6 +19,9 @@ public enum PaymentType {
     @SerializedName("Regular")
     REGULAR,
 
+    @SerializedName("UnreferencedRefund")
+    UNREFERENCEDREFUND,
+
     @SerializedName("Unscheduled")
     UNSCHEDULED
 
