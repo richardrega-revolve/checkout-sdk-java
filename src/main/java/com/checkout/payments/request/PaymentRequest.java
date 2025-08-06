@@ -14,6 +14,7 @@ import com.checkout.payments.RiskRequest;
 import com.checkout.payments.ShippingDetails;
 import com.checkout.payments.ThreeDSRequest;
 import com.checkout.payments.request.source.AbstractRequestSource;
+import com.checkout.payments.request.destination.PaymentRequestDestination;
 import com.checkout.payments.PaymentPlan;
 import com.checkout.payments.sender.PaymentSender;
 import com.google.gson.annotations.SerializedName;
@@ -34,6 +35,8 @@ public final class PaymentRequest {
 
     private AbstractRequestSource source;
 
+    private PaymentRequestDestination destination;
+    
     private Long amount;
 
     private Currency currency;
