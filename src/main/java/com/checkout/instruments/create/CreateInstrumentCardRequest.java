@@ -15,15 +15,34 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public final class CreateInstrumentCardRequest extends CreateInstrumentRequest {
 
+    private String number;
+
+    @SerializedName("expiry_month")
+    private Integer expiryMonth;
+
+    @SerializedName("expiry_year")
+    private Integer expiryYear;
+    
+    @SerializedName("processing_channel_id")
+    private String processingChannelId;
+    
     @SerializedName("account_holder")
     private AccountHolder accountHolder;
 
     private CreateCustomerInstrumentRequest customer;
 
     @Builder
-    private CreateInstrumentCardRequest(final AccountHolder accountHolder,
-                                         final CreateCustomerInstrumentRequest customer) {
+    private CreateInstrumentCardRequest(final String number,
+                                        final Integer expiryMonth,
+                                        final Integer expiryYear,
+                                        final String processingChannelId,
+                                        final AccountHolder accountHolder,
+                                        final CreateCustomerInstrumentRequest customer) {
         super(InstrumentType.CARD);
+        this.number = number;
+        this.expiryMonth = expiryMonth;
+        this.expiryYear = expiryYear;
+        this.processingChannelId = processingChannelId;
         this.accountHolder = accountHolder;
         this.customer = customer;
     }
