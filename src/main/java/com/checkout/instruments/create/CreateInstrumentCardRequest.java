@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public final class CreateInstrumenCardRequest extends CreateInstrumentRequest {
+public final class CreateInstrumentCardRequest extends CreateInstrumentRequest {
 
     @SerializedName("account_holder")
     private AccountHolder accountHolder;
@@ -21,14 +21,14 @@ public final class CreateInstrumenCardRequest extends CreateInstrumentRequest {
     private CreateCustomerInstrumentRequest customer;
 
     @Builder
-    private CreateInstrumenCardRequest(final AccountHolder accountHolder,
+    private CreateInstrumentCardRequest(final AccountHolder accountHolder,
                                          final CreateCustomerInstrumentRequest customer) {
         super(InstrumentType.CARD);
         this.accountHolder = accountHolder;
         this.customer = customer;
     }
 
-    public CreateInstrumenCardRequest() {
+    public CreateInstrumentCardRequest() {
         super(InstrumentType.CARD);
     }
 
